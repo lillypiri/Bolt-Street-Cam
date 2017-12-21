@@ -36,7 +36,7 @@ class FetchWeather extends Component {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${config.WEATHER}`)
       .then(function(response) {
-        console.log("RESPONSE", response);
+        //console.log("RESPONSE", response);
         if (response.status >= 400) {
           throw new Error('Bad response from server');
         }

@@ -8,12 +8,15 @@ Currently a WIP.
 You need to make a `config.js` file with the following:
 
 ```
-const apiKey = 'YOUR-API-KEY';
-export default apiKey;
+module.exports = {
+  STREET_VIEW: 'YOUR-GOOGLE-STREET-VIEW-KEY',
+  WEATHER: 'YOUR-OPEN-WEATHER-KEY',
+  PLACES: 'YOUR-MAPS-JS-KEY'
+};
 
 ```
 
-You'll need an API key from [Google Street View](https://developers.google.com/maps/documentation/streetview/intro).
+You'll need API keys from [Google Street View](https://developers.google.com/maps/documentation/streetview/intro), [OpenWeather](https://openweathermap.org/api), and [Maps Javascript API](https://developers.google.com/maps/documentation/javascript/places).
 
 `npm i` to install dependences, then `npm start` to run.
 
@@ -21,4 +24,4 @@ You'll need an API key from [Google Street View](https://developers.google.com/m
 ### 3 APIS:
 - Google Street View
 - Open Weather Map
-- Yelp ?
+- Maps Javascript API
