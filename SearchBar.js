@@ -34,14 +34,10 @@ class SearchBar extends Component {
           />
           <button type="submit">Find a location</button>
         </form>
-        <div>Example query: 46.414382,10.013988</div>
+        <div>Example queries: -28.166673,153.533405 - 46.414382,10.013988</div>
       </div>
     );
   }
 }
 
-
-// console.log('pay attn', this.state.query);
-// const splitQ = this.state.query.split(',');
-// console.log('split stuff', splitQ);
 export default SearchBar;

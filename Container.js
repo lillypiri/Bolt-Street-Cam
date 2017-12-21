@@ -1,14 +1,14 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import QueryRoute from './QueryRoute';
+import WeatherRoute from './WeatherRoute';
+
 
 class Container extends React.Component {
   constructor(props) {
     super(props) 
 
-    this.state ={
-      keyword: '46.414382,10.013988'
-    };
+    this.state = { keyword: '-28.166673,153.533405' };
   }
 
   render() {
@@ -16,6 +16,7 @@ class Container extends React.Component {
           <SearchBar onSearch={ keyword => this.setState({ keyword }) }/>
 
           <QueryRoute keyword={this.state.keyword} />
+          <WeatherRoute keyword={this.state.keyword} />
         </div>;
 
   }

@@ -1,7 +1,7 @@
 // load in result
 
 import React, { Component } from 'react';
-import apiKey from './config.js';
+import config from './config.js';
 
 import Result from './Result';
 // import Loading from 'react-loading-animation';
@@ -16,6 +16,8 @@ class QueryResult extends Component {
 
     this.state = {
       isLoading: false,
+      copyright: [],
+      status: []
     };
   }
 
@@ -32,23 +34,23 @@ class QueryResult extends Component {
   search(keyword) {
     this.setState(state => ({ isLoading: true }));
 
-   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${apiKey}`)
+   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${config.STREET_VIEW}`)
      .then(function(response) {
-       console.log(response);
+       console.log("RESPONSE AFTER FETCH", response);
        if (response.status >= 400) {
          throw new Error('Bad response from server');
        }
        return response.json();
      })
-     .then(function(json) {
-       console.log('actual json', json);
+     .then(metadata => {
+       this.setState({ copyright: metadata.copyright, status: metadata.status });
      });
   }
 
   render() {
     return <div>
         <h2>{this.props.keyword}</h2>
-        <Result keyword={this.props.keyword} />
+        <Result keyword={this.props.keyword} copyright={this.state.copyright} />
       </div>;
   }
 }

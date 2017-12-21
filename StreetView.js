@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import apiKey from './config.js';
+import config from './config.js';
 
-
+let apiKey = config.STREET_VIEW;
   // rememeber to put in the copyright
   // do we need pitch or fov or heading? options?
-  
+
 class StreetView extends Component {
 
   fetchStreetView(event) {
@@ -15,11 +15,7 @@ class StreetView extends Component {
       return;
     }
 
-    fetch(
-      `https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(
-        this.state.query
-      )}&key=${apiKey}`
-    )
+    fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${config.STREET_VIEW}`)
       .then(function(response) {
         console.log(response);
         if (response.status >= 400) {
