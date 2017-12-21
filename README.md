@@ -1,9 +1,9 @@
 #### Project 12
 
-## Capstone Project
+## Survey Marks 🔩
 
 ###### This is the final project for the 🏡 Treehouse Techdegree Full Stack JavaScript.
-Currently a WIP. 
+🚧 🚧 🚧 Currently a WIP. 🚧 🚧 🚧
 
 You need to make a `config.js` file with the following:
 
