@@ -1,10 +1,11 @@
 var config = {
-  entry: './main.js',
+  entry: './client/main.js',
   output: {
     path: '/',
     filename: 'index.js'
   },
   devServer: {
+    contentBase: __dirname + '/client',
     inline: true,
     port: 8080,
     headers: {
