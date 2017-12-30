@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --hot",
+    "serve": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "proxy": "http://localhost:3001/api",
@@ -16,6 +17,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-loading-animation": "^1.4.0",
