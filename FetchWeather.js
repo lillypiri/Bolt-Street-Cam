@@ -11,26 +11,25 @@ class FetchWeather extends Component {
 
     this.state = {
       isLoading: false,
-      weather: [],
-      name: [],
-      country: [],
-      temperature: [],
-      wind: []
+      weather: null,
+      name: null,
+      country: null,
+      temperature: null,
+      wind: null
     };
   }
 
   componentDidMount() {
-    this.search(this.props.keyword);
+    this.search(this.props.latitude, this.props.longitude);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.keyword !== this.props.keyword) {
-      this.search(nextProps.keyword);
+    if (nextProps.latitude !== this.props.latitude || nextProps.longitude !== this.props.longitude) {
+      this.search(nextProps.latitude, nextProps.longitude);
     }
   }
 
-  search(keyword) {
-    var [lat, long] = this.props.keyword.split(',');
+  search(lat, long) {
     this.setState(state => ({ isLoading: true }));
 
     fetch(
@@ -44,18 +43,21 @@ class FetchWeather extends Component {
       })
       .then(weather => {
         this.setState({
+          isLoading: false,
           weather: weather.weather[0].description,
           name: weather.name,
           country: weather.sys.country,
           temperature: weather.main.temp,
-          wind: weather.wind.speed,
+          wind: weather.wind.speed
         })
       });
   }  
 
   render() {
+    if (this.state.isLoading) return <div>...</div>;
+
     return <div>
-        The current weather in {this.state.name}, {this.state.country} is {this.state.weather}, {this.state.temperature.toString().substr(0, 2)}°C and wind speed of {this.state.wind}. 
+        The current weather in {this.state.name}, {this.state.country} is {this.state.weather}, {Math.floor(this.state.temperature - 273.15)}°C and wind speed of {this.state.wind}. 
       </div>;
   }
 }

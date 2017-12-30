@@ -7,6 +7,7 @@
     "start": "webpack-dev-server --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "proxy": "http://localhost:3001/api",
   "author": "Lilly Piri",
   "license": "MIT",
   "dependencies": {

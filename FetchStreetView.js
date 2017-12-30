@@ -3,12 +3,12 @@
 import React, { Component } from 'react';
 import config from './config.js';
 
-import Result from './Result';
+import StreetViewImage from './StreetViewImage';
 // import Loading from 'react-loading-animation';
 
 require('isomorphic-fetch');
 
-class QueryResult extends Component {
+class FetchStreetView extends Component {
   constructor(props) {
     super(props);
 
@@ -22,19 +22,19 @@ class QueryResult extends Component {
   }
 
   componentDidMount() {
-    this.search(this.props.keyword);
+    this.search(this.props.latitude, this.props.longitude);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.keyword !== this.props.keyword) {
-      this.search(nextProps.keyword);
+    if (nextProps.latitude !== this.props.latitude || nextProps.longitude !== this.props.longitude) {
+      this.search(nextProps.latitude, nextProps.longitude);
     }
   }
 
-  search(keyword) {
+  search(latitude, longitude) {
     this.setState(state => ({ isLoading: true }));
 
-   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${config.STREET_VIEW}`)
+   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${latitude},${longitude}&key=${config.STREET_VIEW}`)
      .then(function(response) {
        console.log("RESPONSE AFTER FETCH", response);
        if (response.status >= 400) {
@@ -48,11 +48,8 @@ class QueryResult extends Component {
   }
 
   render() {
-    return <div>
-        <h2>{this.props.keyword}</h2>
-        <Result keyword={this.props.keyword} copyright={this.state.copyright} />
-      </div>;
+    return <StreetViewImage latitude={this.props.latitude} longitude={this.props.longitude} copyright={this.state.copyright} />;
   }
 }
 
-export default QueryResult;
+export default FetchStreetView;

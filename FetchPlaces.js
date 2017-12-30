@@ -18,20 +18,24 @@ class FetchPlaces extends Component {
   }
 
   componentDidMount() {
-    this.search(this.props.keyword);
+    this.search(this.props.latitude, this.props.longitude);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.keyword !== this.props.keyword) {
-      this.search(nextProps.keyword);
+    if (nextProps.latitude !== this.props.latitude || nextProps.longitude !== this.props.longitude) {
+      this.search(nextProps.latitude, nextProps.longitude);
     }
   }
 
-  search(keyword) {
-    var [lat, long] = this.props.keyword.split(',');
+  search(latitude, longitude) {
     this.setState(state => ({ isLoading: true }));
 
-    fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=1000&type=restaurant&key=${config.PLACES}`, {mode: 'cors'})
+    fetch(
+      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&type=hardware_store&key=${
+        config.PLACES
+      }`,
+      { mode: 'cors' }
+    )
       .then(function(response) {
         //console.log('PLACES RESPONSE', response);
         if (response.status >= 400) {
@@ -45,12 +49,7 @@ class FetchPlaces extends Component {
   }
 
   render() {
-    return (
-      <div>
-        {console.log("NAME??????????", this.state.names)}
-        <Places names={this.state.names} />
-      </div>
-    );
+    return <Places names={this.state.names} />;
   }
 }
 

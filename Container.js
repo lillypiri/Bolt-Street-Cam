@@ -1,26 +1,34 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import QueryRoute from './QueryRoute';
-import WeatherRoute from './WeatherRoute';
-import PlaceRoute from './PlaceRoute';
-
+import FetchStreetView from './FetchStreetView';
+import FetchWeather from './FetchWeather';
+import FetchPlaces from './FetchPlaces';
 
 class Container extends React.Component {
   constructor(props) {
-    super(props) 
+    super(props);
 
-    this.state = { keyword: '-28.166673,153.533405' };
+    this.onSearch = this.onSearch.bind(this);
+
+    this.state = {
+      latitude: -28.166673,
+      longitude: 153.533405
+    };
+  }
+
+  onSearch(q) {
+    const [latitude, longitude] = q.split(',');
+    this.setState(state => ({ latitude, longitude }));
   }
 
   render() {
-      return <div>
-          <SearchBar onSearch={ keyword => this.setState({ keyword }) }/>
+    return <div>
+        <SearchBar onSearch={this.onSearch} />
 
-          <QueryRoute keyword={this.state.keyword} />
-          <WeatherRoute keyword={this.state.keyword} />
-          <PlaceRoute keyword={this.state.keyword} />
-        </div>;
-
+        <FetchStreetView latitude={this.state.latitude} longitude={this.state.longitude} />
+        <FetchWeather latitude={this.state.latitude} longitude={this.state.longitude} />
+        <FetchPlaces latitude={this.state.latitude} longitude={this.state.longitude} />
+      </div>;
   }
 }
 
