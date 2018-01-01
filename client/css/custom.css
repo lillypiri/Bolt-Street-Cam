@@ -1,8 +1,9 @@
 .main {
   display: block;
-  background-color: gainsboro;
+  background-color: white;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
 }
 
 img {
@@ -17,4 +18,85 @@ input {
 
 div {
   margin: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.title {
+  grid-column: 1 / 1;
+  grid-row: 1;
+  font-family: 'Cabin Sketch', sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+}
+.search { 
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+.street-view {
+  grid-column: 1 / 2;
+  grid-row: 2 / 2;
+}
+.places {
+  grid-column: 1;
+  grid-row: 3;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+.weather {
+  grid-column: 2;
+  grid-row: 3;
+  border: 1px solid #333;
+  border-radius: 3px;
+}
+.footer {
+  grid-column: 3;
+  grid-row: 4;
+  text-align: center;
+}
+
+
+.search-button {
+  background-color: #24abff;
+  border: none;
+  color: white;
+  padding: 0 32px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 40px;
+  border: 1px solid #24A0F5;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-input {
+  font-size: 16px;
+  height: 40px;
+  width: 300px;
+  padding: 0 10px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-right: 5px;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }

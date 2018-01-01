@@ -1,7 +1,7 @@
 // load in result
 
 import React, { Component } from 'react';
-import config from './config.js';
+import config from '../config.js';
 
 import StreetViewImage from './StreetViewImage';
 // import Loading from 'react-loading-animation';

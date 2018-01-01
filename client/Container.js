@@ -17,17 +17,36 @@ class Container extends React.Component {
   }
 
   onSearch(q) {
-    const [latitude, longitude] = q.split(',');
-    this.setState(state => ({ latitude, longitude }));
+    fetch('http://localhost:7777/marks/' + q).then(r => r.json()).then(json => {
+      const {latitude, longitude} = json;``
+      this.setState(state => ({ latitude, longitude }));
+    });
   }
 
   render() {
-    return <div>
-        <SearchBar onSearch={this.onSearch} />
+    return <div className="wrapper">
+        <div className="title">
+          Bolt Street Cam
+          <div className="subtitle">
+           Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in geodetic and land surveying.
+          </div>
+        </div>
 
-        <FetchStreetView latitude={this.state.latitude} longitude={this.state.longitude} />
-        <FetchWeather latitude={this.state.latitude} longitude={this.state.longitude} />
-        <FetchPlaces latitude={this.state.latitude} longitude={this.state.longitude} />
+        <div className="search">
+          <SearchBar onSearch={this.onSearch} />
+        </div>
+        <div className="street-view">
+          <FetchStreetView latitude={this.state.latitude} longitude={this.state.longitude} />
+        </div>
+        <div className="weather">
+          <FetchWeather latitude={this.state.latitude} longitude={this.state.longitude} />
+        </div>
+        <div className="places">
+          <FetchPlaces latitude={this.state.latitude} longitude={this.state.longitude} />
+        </div>
+        <div className="footer">
+          check out the github repo for this page
+          </div>
       </div>;
   }
 }

@@ -18,25 +18,17 @@ class SearchBar extends Component {
   }
 
   render() {
-    return (
-      <div>
+    return <div>
         <form onSubmit={this.onSubmit}>
-          <input
-            autoFocus
-            type="text"
-            onChange={e =>
-              this.setState({
+          <input className="search-input" autoFocus type="text" onChange={e => this.setState({
                 query: e.target.value
-              })
-            }
-            value={this.state.query}
-            placeholder="<lat>,<long>"
-          />
-          <button type="submit">Find a location</button>
+              })} value={this.state.query} placeholder="PM150124" />
+          <button className="search-button" type="submit">Find a survey mark</button>
         </form>
-        <div>Example queries: -28.166673,153.533405 - 46.414382,10.013988</div>
-      </div>
-    );
+        <div>Example query: PM150124</div>
+        <div> Enter in a NSW survey mark number or a latitude and longitude,
+           to see a Street View of the area the mark is located in.</div>
+      </div>;
   }
 }
 

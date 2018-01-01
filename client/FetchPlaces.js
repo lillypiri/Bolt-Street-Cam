@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import config from './config.js';
 
 require('isomorphic-fetch');
 
@@ -30,12 +29,7 @@ class FetchPlaces extends Component {
   search(latitude, longitude) {
     this.setState(state => ({ isLoading: true }));
 
-    fetch(
-      `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&type=hardware_store&key=${
-        config.PLACES
-      }`,
-      { mode: 'cors' }
-    )
+    fetch(`http://localhost:7777/places?latitude=${latitude}&longitude=${longitude}`)
       .then(function(response) {
         //console.log('PLACES RESPONSE', response);
         if (response.status >= 400) {

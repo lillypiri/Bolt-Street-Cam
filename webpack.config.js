@@ -1,7 +1,8 @@
 var config = {
   entry: './client/main.js',
   output: {
-    path: '/',
+    path: __dirname + '/build',
+    publicPath: '/',
     filename: 'index.js'
   },
   devServer: {
@@ -23,6 +24,10 @@ var config = {
         query: {
           presets: ['env', 'react']
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   }

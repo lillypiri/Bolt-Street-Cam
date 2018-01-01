@@ -25,3 +25,10 @@ You'll need API keys from [Google Street View](https://developers.google.com/map
 - Google Street View
 - Open Weather Map
 - Maps Javascript API
+
+
+### Populating the `marks` table
+
+Update the `bin/scims.sql` file and then run:
+
+`node bin/extract-scims.js`
