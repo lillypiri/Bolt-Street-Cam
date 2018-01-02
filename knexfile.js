@@ -10,5 +10,11 @@ module.exports = {
     connection: {
       filename: './server/database.sqlite'
     }
+  },
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './server/test.sqlite'
+    }
   }
 };

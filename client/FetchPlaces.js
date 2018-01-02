@@ -12,7 +12,7 @@ class FetchPlaces extends Component {
 
     this.state = {
       isLoading: false,
-      names: null
+      place: null
     };
   }
 
@@ -37,13 +37,14 @@ class FetchPlaces extends Component {
         }
         return response.json();
       })
-      .then(state => {
-        this.setState({ names: state.results[0].name });
+      .then(json => {
+        const place = json.results[0];
+        this.setState({ place });
       });
   }
 
   render() {
-    return <Places names={this.state.names} />;
+    return <Places place={this.state.place} />;
   }
 }
 

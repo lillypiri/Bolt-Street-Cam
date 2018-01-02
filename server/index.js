@@ -33,7 +33,11 @@ app.get('/places', (req, res, next) => {
   })
 })
 
-app.listen(7777, () => {
-  console.log("SERVER IS LIVE ON port 7777")
-});
+if(!module.parent) {
+  app.listen(7777, () => {
+    console.log('SERVER IS LIVE ON port 7777');
+  });
+};
+
+module.exports = app;
 

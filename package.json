@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack && npm run serve",
     "serve": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "knex": "knex"
+    "knex": "knex",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha"
   },
   "proxy": "http://localhost:3001/api",
   "author": "Lilly Piri",
@@ -30,5 +30,10 @@
     "utm": "^1.1.1",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "supertest": "^3.0.0"
   }
 }
