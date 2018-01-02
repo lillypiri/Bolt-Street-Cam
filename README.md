@@ -11,6 +11,7 @@ You need to rename `.env.example` to `.env` and add your keys to the file like s
 STREET_VIEW=YOUR-STREET-VIEW-KEY
 WEATHER=YOUR-WEATHER-KEY
 PLACES=YOUR-PLACES-KEY
+URL=YOUR-URL
 
 ```
 

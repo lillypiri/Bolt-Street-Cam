@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import FetchStreetView from './FetchStreetView';
 import FetchWeather from './FetchWeather';
 import FetchPlaces from './FetchPlaces';
+import config from '../config.js';
 
 class Container extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class Container extends React.Component {
   }
 
   onSearch(q) {
-    fetch('http://localhost:7777/marks/' + q).then(r => r.json()).then(json => {
+    fetch(`${config.URL}/marks/` + q).then(r => r.json()).then(json => {
       const {latitude, longitude} = json;``
       this.setState(state => ({ latitude, longitude }));
     });
