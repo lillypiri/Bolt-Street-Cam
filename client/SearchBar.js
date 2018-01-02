@@ -25,7 +25,7 @@ class SearchBar extends Component {
               })} value={this.state.query} placeholder="PM150124" />
           <button className="search-button" type="submit">Find a survey mark</button>
         </form>
-        <div>Example queries: PM150124, PM150105, PM150123</div>
+        <div>Example queries: PM150124, PM150105, PM150123, SS112568</div>
         <div> Enter in a NSW survey mark number or a latitude and longitude,
            to see a Street View of the area the mark is located in.</div>
       </div>;

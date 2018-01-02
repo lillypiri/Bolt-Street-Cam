@@ -46,7 +46,7 @@ class Container extends React.Component {
           <FetchPlaces latitude={this.state.latitude} longitude={this.state.longitude} />
         </div>
         <div className="footer">
-          check out the github repo for this page
+          Check out the <a href="https://github.com/lillypiri/Bolt-Street-Cam">github repository</a> for this page
           </div>
       </div>;
   }
