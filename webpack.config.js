@@ -1,3 +1,7 @@
+require('dotenv').config();
+
+const Webpack = require('webpack');
+
 var config = {
   entry: './client/main.js',
   output: {
@@ -30,6 +34,10 @@ var config = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new Webpack.EnvironmentPlugin(Object.keys(process.env))
+  ]
 };
+
 module.exports = config;

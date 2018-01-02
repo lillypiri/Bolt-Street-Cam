@@ -5,20 +5,18 @@
 ###### This is the final project for the 🏡 Treehouse Techdegree Full Stack JavaScript.
 🚧 🚧 🚧 Currently a WIP. 🚧 🚧 🚧
 
-You need to make a `config.js` file with the following:
+You need to rename `.env.example` to `.env` and add your keys to the file like so
 
 ```
-module.exports = {
-  STREET_VIEW: 'YOUR-GOOGLE-STREET-VIEW-KEY',
-  WEATHER: 'YOUR-OPEN-WEATHER-KEY',
-  PLACES: 'YOUR-MAPS-JS-KEY'
-};
+STREET_VIEW=YOUR-STREET-VIEW-KEY
+WEATHER=YOUR-WEATHER-KEY
+PLACES=YOUR-PLACES-KEY
 
 ```
 
 You'll need API keys from [Google Street View](https://developers.google.com/maps/documentation/streetview/intro), [OpenWeather](https://openweathermap.org/api), and [Maps Javascript API](https://developers.google.com/maps/documentation/javascript/places).
 
-`npm i` to install dependences, then `npm start` to run.
+`npm i` to install dependences, then `npm start` to run, `npm test` to test.
 
 
 ### 3 APIS:
