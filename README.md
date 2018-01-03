@@ -31,8 +31,9 @@ Update the `bin/scims.sql` file, run:
 
 `node bin/extract-scims.js`
 
+This will take about 5 minutes to complete.
 
-Now you are ready to use this app: `npm start` to run, `npm test` to test.
+When the console logs out '👍 Done' you are ready to use this app: `npm start` to run, `npm test` to test.
 
 
 
