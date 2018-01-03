@@ -6,22 +6,9 @@ class StreetViewImage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
-
     this.state = {
       degree: 0
     };
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
-    this.setState(prevState => {
-      if (this.state.degree === 360) {
-        return { degree: 45 };
-      } else {
-        return { degree: this.state.degree + 45 };
-      }
-    });
   }
 
   render() {
@@ -41,11 +28,12 @@ class StreetViewImage extends React.Component {
           }
         />
         <div className="copyright">Image {this.props.copyright}</div>
-        <form onSubmit={this.onSubmit}>
-          <button className="search-button" type="submit">
+        <button className="search-button" type="submit" onClick={e => this.setState(state => ({ degree: (state.degree - 45) % 360 }))}>
+            ←
+          </button>
+          <button className="search-button" type="submit" onClick={e => this.setState(state => ({ degree: (state.degree + 45) % 360 }))}>
             →
           </button>
-        </form>
       </div>
     );
   }

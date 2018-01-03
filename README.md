@@ -49,3 +49,4 @@ This is the final project for my Treehouse Tech Degree (Full Stack JavaScript). 
 - Safari Version 11.0.2 (12604.4.7.1.4)
 - FireFox 56.0 (64-bit)
 - Chrome Version 63.0.3239.84 (Official Build) (64-bit)
+- Internet Explorer 11

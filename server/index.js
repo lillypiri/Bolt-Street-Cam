@@ -18,7 +18,7 @@ app.get('/marks/:mark_id', (req, res, next) => {
     .where({ mark_id: req.params.mark_id.toUpperCase() })
     .then(marks => {
       if (marks.length === 0) {
-        return next(new Error('No mark found'));
+        return res.status(404).json({ });
       }
 
       res.json(marks[0]);
