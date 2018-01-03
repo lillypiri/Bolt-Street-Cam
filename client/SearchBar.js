@@ -43,8 +43,8 @@ class SearchBar extends Component {
         <br />
         <div>
           Example queries:
-          <span className="select-markers" onClick={e => this.selectMarker('PM150124')}>PM150124</span>,
-          <span className="select-markers" onClick={e => this.selectMarker('SS112568')}>SS112568</span>,
+          <span className="select-markers" onClick={e => this.selectMarker('PM150124')}>PM150124</span>, 
+          <span className="select-markers" onClick={e => this.selectMarker('SS112568')}>SS112568</span>, 
           <span className="select-markers" onClick={e => this.selectMarker('PM22679')}>PM22679</span>,
           <span className="select-markers" onClick={e => this.selectMarker('PM22678')}>PM22678</span>,
           <span className="select-markers" onClick={e => this.selectMarker('PM120624')}>PM120624</span>
