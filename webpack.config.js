@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const Webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var config = {
   entry: './client/main.js',
@@ -36,7 +37,8 @@ var config = {
     ]
   },
   plugins: [
-    new Webpack.EnvironmentPlugin(Object.keys(process.env))
+    new Webpack.EnvironmentPlugin(Object.keys(process.env)),
+    new UglifyJsPlugin()
   ]
 };
 

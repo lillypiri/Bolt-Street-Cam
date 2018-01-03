@@ -3,7 +3,6 @@
 ## Bolt Street View 🔩
 
 ###### This is the final project for the 🏡 Treehouse Techdegree Full Stack JavaScript.
-🚧 🚧 🚧 Currently a WIP. 🚧 🚧 🚧
 
 ### App is live here: [Bolt Street View](https://bolt-street-view.herokuapp.com/).
 Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in geodetic and land surveying. (In simple terms, surveyors uses these known marks to measure). With this app, you can search for a survey mark and it will retrieve the street view for its location,  you can then click the arrow to turn around 360. It also returns a nearby hardware store and the current weather.

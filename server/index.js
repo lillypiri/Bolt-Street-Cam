@@ -43,7 +43,7 @@ app.get('/places', (req, res, next) => {
 
 if (!module.parent) {
   app.listen(process.env.PORT || 7777, () => {
-    console.log(`SERVER IS LIVE ON port ${process.env.PORT}`);
+    console.log(`SERVER IS LIVE ON port ${process.env.PORT || 7777}`);
   });
 }
 
