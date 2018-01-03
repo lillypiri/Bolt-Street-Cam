@@ -7,7 +7,7 @@
 ### App is live here: [Bolt Street View](https://bolt-street-view.herokuapp.com/).
 Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in geodetic and land surveying. (In simple terms, surveyors uses these known marks to measure). With this app, you can search for a survey mark and it will retrieve the street view for its location,  you can then click the arrow to turn around 360. It also returns a nearby hardware store and the current weather.
 
-
+![Bolt Street View gif](https://media.giphy.com/media/3o7527tl7B9KIsfW9y/giphy.gif "Bolt Street in action")
 
 ### How to use this app
 
