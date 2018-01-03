@@ -17,14 +17,14 @@ class StreetView extends Component {
 
     fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${config.STREET_VIEW}`)
       .then(function(response) {
-        console.log(response);
+        // console.log(response);
         if (response.status >= 400) {
           throw new Error('Bad response from server');
         }
         return response.json();
       })
       .then(function(json) {
-        console.log('actual json', json);
+        // console.log('actual json', json);
       });
   }
 }

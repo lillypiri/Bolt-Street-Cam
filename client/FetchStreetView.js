@@ -36,7 +36,7 @@ class FetchStreetView extends Component {
 
    fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${latitude},${longitude}&key=${config.STREET_VIEW}`)
      .then(function(response) {
-       console.log("RESPONSE AFTER FETCH", response);
+      //  console.log("RESPONSE AFTER FETCH", response);
        if (response.status >= 400) {
          throw new Error('Bad response from server');
        }
