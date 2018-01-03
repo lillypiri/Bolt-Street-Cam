@@ -37,9 +37,12 @@ var config = {
     ]
   },
   plugins: [
-    new Webpack.EnvironmentPlugin(Object.keys(process.env)),
-    new UglifyJsPlugin()
+    new Webpack.EnvironmentPlugin(Object.keys(process.env))
   ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(new UglifyJsPlugin());
+}
 
 module.exports = config;

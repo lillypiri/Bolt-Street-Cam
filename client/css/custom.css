@@ -181,3 +181,13 @@ img {
 .error {
   color: tomato;
 }
+
+.select-markers {
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 3px;
+}
+
+.select-markers:hover {
+  color: #24A0F5;
+}
