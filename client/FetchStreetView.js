@@ -34,21 +34,31 @@ class FetchStreetView extends Component {
   search(latitude, longitude) {
     this.setState(state => ({ isLoading: true }));
 
-   fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${latitude},${longitude}&key=${config.STREET_VIEW}`)
-     .then(function(response) {
-      //  console.log("RESPONSE AFTER FETCH", response);
-       if (response.status >= 400) {
-         throw new Error('Bad response from server');
-       }
-       return response.json();
-     })
-     .then(metadata => {
-       this.setState({ copyright: metadata.copyright, status: metadata.status });
-     });
+    fetch(
+      `https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${latitude},${longitude}&key=${
+        config.STREET_VIEW
+      }`
+    )
+      .then(function(response) {
+        //  console.log("RESPONSE AFTER FETCH", response);
+        if (response.status >= 400) {
+          throw new Error('Bad response from server');
+        }
+        return response.json();
+      })
+      .then(metadata => {
+        this.setState({ copyright: metadata.copyright, status: metadata.status });
+      });
   }
 
   render() {
-    return <StreetViewImage latitude={this.props.latitude} longitude={this.props.longitude} copyright={this.state.copyright} />
+    return (
+      <StreetViewImage
+        latitude={this.props.latitude}
+        longitude={this.props.longitude}
+        copyright={this.state.copyright}
+      />
+    );
   }
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import config from '../config.js';
 
 class Map extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.initMap = this.initMap.bind(this);
   }
@@ -30,17 +30,17 @@ class Map extends Component {
 
   initMap() {
     this.map = new google.maps.Map(this.base, {
-      center: {lat: this.props.latitude, lng: this.props.longitude},
+      center: { lat: this.props.latitude, lng: this.props.longitude },
       zoom: 12
     });
     this.marker = new google.maps.Marker({
-      position: {lat: this.props.latitude, lng: this.props.longitude},
+      position: { lat: this.props.latitude, lng: this.props.longitude },
       map: this.map
     });
   }
 
   render() {
-    return <div className="map" ref={element => this.base = element} />
+    return <div className="map" ref={element => (this.base = element)} />;
   }
 }
 

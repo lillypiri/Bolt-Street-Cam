@@ -4,7 +4,6 @@ import config from './config.js';
 let apiKey = config.STREET_VIEW;
 
 class StreetView extends Component {
-
   fetchStreetView(event) {
     event.preventDefault();
 
@@ -13,7 +12,11 @@ class StreetView extends Component {
       return;
     }
 
-    fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(this.state.query)}&key=${config.STREET_VIEW}`)
+    fetch(
+      `https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=${encodeURIComponent(
+        this.state.query
+      )}&key=${config.STREET_VIEW}`
+    )
       .then(function(response) {
         // console.log(response);
         if (response.status >= 400) {

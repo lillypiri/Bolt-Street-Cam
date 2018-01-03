@@ -14,31 +14,37 @@ app.get('/', (req, res) => {
 });
 
 app.get('/marks/:mark_id', (req, res, next) => {
-  knex('marks').where({ mark_id: req.params.mark_id.toUpperCase() }).then(marks => {
-    if (marks.length === 0) {
-      return next(new Error('No mark found'))
-    }
+  knex('marks')
+    .where({ mark_id: req.params.mark_id.toUpperCase() })
+    .then(marks => {
+      if (marks.length === 0) {
+        return next(new Error('No mark found'));
+      }
 
-    res.json(marks[0]);
-  }).catch(err => {
-    return next(err);
-  });
+      res.json(marks[0]);
+    })
+    .catch(err => {
+      return next(err);
+    });
 });
 
 app.get('/places', (req, res, next) => {
   const { latitude, longitude } = req.query;
-  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&type=hardware_store&key=${config.PLACES}`;
+  const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&type=hardware_store&key=${
+    config.PLACES
+  }`;
 
-  fetch(url).then(r => r.json()).then(json => {
-    res.json(json);
-  })
-})
+  fetch(url)
+    .then(r => r.json())
+    .then(json => {
+      res.json(json);
+    });
+});
 
-if(!module.parent) {
+if (!module.parent) {
   app.listen(process.env.PORT || 7777, () => {
     console.log(`SERVER IS LIVE ON port ${process.env.PORT}`);
   });
-};
+}
 
 module.exports = app;
-

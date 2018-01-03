@@ -13,19 +13,23 @@ class Container extends React.Component {
 
     this.state = {
       latitude: -28.166673,
-      longitude: 153.533405,
+      longitude: 153.533405
     };
   }
 
   onSearch(q) {
-    fetch(`${config.URL}/marks/` + q).then(r => r.json()).then(json => {
-      const {latitude, longitude} = json;``
-      this.setState(state => ({ latitude, longitude }));
-    });
+    fetch(`${config.URL}/marks/` + q)
+      .then(r => r.json())
+      .then(json => {
+        const { latitude, longitude } = json;
+        ``;
+        this.setState(state => ({ latitude, longitude }));
+      });
   }
 
   render() {
-    return <div className="container">
+    return (
+      <div className="container">
         <div className="title">
           Bolt Street View
           <div className="subtitle">
@@ -49,7 +53,8 @@ class Container extends React.Component {
         <div className="footer">
           Check out the <a href="https://github.com/lillypiri/Bolt-Street-Cam">github repository</a> for this page.
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 

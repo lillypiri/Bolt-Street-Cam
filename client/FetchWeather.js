@@ -32,8 +32,7 @@ class FetchWeather extends Component {
   search(lat, long) {
     this.setState(state => ({ isLoading: true }));
 
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${config.WEATHER}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=${config.WEATHER}`)
       .then(function(response) {
         //console.log("RESPONSE", response);
         if (response.status >= 400) {
@@ -49,16 +48,19 @@ class FetchWeather extends Component {
           country: weather.sys.country,
           temperature: weather.main.temp,
           wind: weather.wind.speed
-        })
+        });
       });
-  }  
+  }
 
   render() {
     if (this.state.isLoading) return <div>...</div>;
 
-    return <div>
-        The current weather in {this.state.name}, {this.state.country} is {this.state.weather}, {Math.floor(this.state.temperature - 273.15)}°C and wind speed of {this.state.wind}. 
-      </div>;
+    return (
+      <div>
+        The current weather in {this.state.name}, {this.state.country} is {this.state.weather},{' '}
+        {Math.floor(this.state.temperature - 273.15)}°C and wind speed of {this.state.wind}.
+      </div>
+    );
   }
 }
 
