@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import config from '../config.js';
-
 import StreetViewImage from './StreetViewImage';
+
 // import Loading from 'react-loading-animation';
 
 require('isomorphic-fetch');
@@ -48,7 +48,7 @@ class FetchStreetView extends Component {
   }
 
   render() {
-    return <StreetViewImage latitude={this.props.latitude} longitude={this.props.longitude} copyright={this.state.copyright} />;
+    return <StreetViewImage latitude={this.props.latitude} longitude={this.props.longitude} copyright={this.state.copyright} />
   }
 }
 

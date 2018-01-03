@@ -13,7 +13,7 @@ class Container extends React.Component {
 
     this.state = {
       latitude: -28.166673,
-      longitude: 153.533405
+      longitude: 153.533405,
     };
   }
 
@@ -29,7 +29,8 @@ class Container extends React.Component {
         <div className="title">
           Bolt Street View
           <div className="subtitle">
-           Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in geodetic and land surveying.
+            Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in
+            geodetic and land surveying.
           </div>
         </div>
 
@@ -47,7 +48,7 @@ class Container extends React.Component {
         </div>
         <div className="footer">
           Check out the <a href="https://github.com/lillypiri/Bolt-Street-Cam">github repository</a> for this page.
-          </div>
+        </div>
       </div>;
   }
 }

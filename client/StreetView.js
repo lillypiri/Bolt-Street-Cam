@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import config from './config.js';
 
 let apiKey = config.STREET_VIEW;
-  // rememeber to put in the copyright
-  // do we need pitch or fov or heading? options?
 
 class StreetView extends Component {
 
