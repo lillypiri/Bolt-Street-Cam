@@ -30,7 +30,7 @@ class FetchPlaces extends Component {
   search(latitude, longitude) {
     this.setState(state => ({ isLoading: true }));
 
-    fetch(`${config.URL}/places?latitude=${latitude}&longitude=${longitude}`, { 'mode': 'no-cors' })
+    fetch(`${config.URL}/places?latitude=${latitude}&longitude=${longitude}`)
       .then(function(response) {
         //console.log('PLACES RESPONSE', response);
         if (response.status >= 400) {

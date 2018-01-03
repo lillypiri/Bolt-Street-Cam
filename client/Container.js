@@ -27,7 +27,7 @@ class Container extends React.Component {
   render() {
     return <div className="container">
         <div className="title">
-          Bolt Street Cam
+          Bolt Street View
           <div className="subtitle">
            Survey marks (or bolts) are objects that mark key survey points on the Earth's surface, and are used in geodetic and land surveying.
           </div>

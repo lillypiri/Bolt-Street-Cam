@@ -2,7 +2,7 @@
   display: block;
   background-color: white;
   text-align: center;
-  padding: 20px;
+  padding-bottom: 10px;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
   font-size: 1em;
 }
@@ -61,6 +61,7 @@ img {
 }
 
 /* grid area <row-start> / <column-start> / <row-end> / <column-end> */
+/* background-color: rgb(0, 188, 212); */
 
 .subtitle {
   font-size: 14px;
