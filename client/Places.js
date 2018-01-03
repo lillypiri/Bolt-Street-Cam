@@ -7,7 +7,7 @@ export default props => {
   const { lat, lng } = props.place.geometry.location;
 
   return <div>
-      <div>Nearby hardware store: {props.place.name}</div>
+      <div className="places-text">Nearby hardware store: {props.place.name}</div>
       <Map latitude={lat} longitude={lng} />
     </div>;
 };

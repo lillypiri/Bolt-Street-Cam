@@ -8,6 +8,6 @@ export default props => {
 
   return <div>
       <img src={'https://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + props.latitude + ',' + props.longitude + '&key=' + config.STREET_VIEW} />
-      <div>Image {props.copyright}</div>
+      <div className="copyright">Image {props.copyright}</div>
     </div>;
 };
