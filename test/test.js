@@ -24,4 +24,19 @@ describe('api', function() {
        });
     });
   });
+
+  describe('/mark_id', function() {
+    it('should return 404 when given an unknown mark_id', function(done) {
+      request(server)
+        .get('/marks/1ddwe223323')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect(404)
+        .end(function(err, resp) {
+          if (err) return done(err);
+          expect(resp.statusCode).to.equal(404);
+          done();
+        });
+    });
+  });
 });
